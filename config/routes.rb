@@ -1,6 +1,10 @@
 Treebook::Application.routes.draw do
-  resources :statuses
+  devise_for :users  do
+    get '/users/sign_out' => 'devise/sessions#destroy'
+end
 
+  resources :statuses
+  root :to => "statuses#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

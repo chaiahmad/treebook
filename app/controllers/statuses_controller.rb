@@ -4,6 +4,7 @@ class StatusesController < ApplicationController
   def index
     @statuses = Status.all
 
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @statuses }
@@ -41,14 +42,16 @@ class StatusesController < ApplicationController
   # POST /statuses.json
   def create
     @status = Status.new(params[:status])
-
+    @status.user = current_user
     respond_to do |format|
       if @status.save
         format.html { redirect_to @status, notice: 'Status was successfully created.' }
         format.json { render json: @status, status: :created, location: @status }
+        
       else
         format.html { render action: "new" }
         format.json { render json: @status.errors, status: :unprocessable_entity }
+        
       end
     end
   end
@@ -78,6 +81,7 @@ class StatusesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to statuses_url }
       format.json { head :no_content }
+      format.js   { render :nothing => true } 
     end
   end
 end

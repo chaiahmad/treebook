@@ -18,3 +18,4 @@ $('.delete_post').bind('ajax:success', function() {
     $(this).closest('div').fadeOut();  
 }); 
 });
+

@@ -14,7 +14,10 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true 
   validates :nick_name, presence: true, 
                         uniqueness: true,
-                        format: {:with => /a-zA-Z0-9_-/, :message =>'Must be formatted coorectly.'}
+                        format: {
+                          with: /^[a-zA-Z0-9_-]+$/, 
+                          message: 'Must be formatted coorectly.'
+                        }
 
   has_many :statuses
   

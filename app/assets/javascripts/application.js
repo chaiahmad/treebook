@@ -15,7 +15,7 @@
 //= require_tree .
 $(document).ready(function() {
 $('.delete_post').bind('ajax:success', function() {  
-    $(this).closest('div').fadeOut();  
+    $(this).closest('div.status').fadeOut();  
 }); 
 });
 

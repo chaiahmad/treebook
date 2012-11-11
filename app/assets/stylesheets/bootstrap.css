@@ -246,6 +246,10 @@ a:hover {
 
 .span1 {
   width: 60px;
+  border-radius: 10%;
+  overflow: hidden;
+  border: solid 5px #ccc;
+  margin-left:  0px;
 }
 
 .offset12 {

@@ -3,3 +3,9 @@ jason:
  last_name: "Seifer"
  email: "jason@teamtreehouse.com"
  nick_name: "jasonseifer"
+
+jim:
+ first_name: "Jim"
+ last_name: "Hoskins"
+ email: "jim@teamtreehouse.com"
+ nick_name: "jimhoskins"
